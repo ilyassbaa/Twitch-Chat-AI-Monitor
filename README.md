@@ -1,64 +1,83 @@
-# Code-Switching Detection: Darija, French, and English
 
-## Project Overview
-This project implements a Natural Language Processing (NLP) pipeline designed to detect and classify **Code-Switching** in trilingual Moroccan text. The system automatically identifies segments of **Darija**, **French**, and **English** within mixed-language sentences.
+# Twitch Chat AI Monitor
 
-This project was developed as part of the academic curriculum in Computer Science at **Faculté Polydisciplinaire de Khouribga (FP Khouribga)**.
+A real-time sentiment and toxicity analysis engine for Twitch, developed as a final-year engineering project at the **Faculté Polydisciplinaire de Khouribga (FPK)**.
 
-## Authors
-* **Ilyass Bahri**
-* **Oussama El Hichami**
+---
 
-## Project Architecture
-The system utilizes a fine-tuned **XLM-RoBERTa** model to perform token classification. The pipeline is designed for local processing, ensuring data privacy and utilizing AMD GPU acceleration (via DirectML).
+## 🚀 Project Overview
+This project addresses the challenges of high-velocity live stream moderation by providing an AI-driven, real-time analysis of chat sentiment. The system categorizes chat activity into **Hype**, **Neutral**, and **Toxic** sentiment patterns, enabling content creators to reduce moderator burnout and maintain safe, inclusive community interactions.
 
-## Key Features
-* **Trilingual Detection:** Classifies input tokens into Darija (DA), French (FR), and English (EN) labels using a BIO tagging schema.
-* **Stateless Privacy:** The application is designed with privacy in mind. User inputs are processed in-memory and are never persisted to disk, ensuring that no sensitive user data is stored.
-* **User Interface:** A real-time web interface built with **Gradio** to visualize token-level language identification.
-* **Hardware Optimized:** Leverages local AMD GPU resources for high-performance training and inference.
+## 🛠 Technical Methodology
+The system architecture focuses on speed and accuracy:
+1.  **Ingestion Layer:** Persistent TCP socket connections (IRC Protocol) for real-time data streaming.
+2.  **Preprocessing Firewall:** A custom heuristic `TWITCH_DICT` layer that normalizes gaming-specific slang and emotes (e.g., "Pog", "LULW") into standard linguistic vectors before AI processing.
+3.  **Inference Engine:** A fine-tuned **DistilBERT** transformer model, optimized to provide classification results in under 200ms.
+4.  **Telemetry & UI:** A Streamlit-powered dashboard that visualizes sentiment spikes and provides actionable chat telemetry logs.
 
-## Technologies Used
-* **Languages:** Python 3.11
-* **Frameworks:** PyTorch, Hugging Face Transformers (`XLM-RoBERTa`)
-* **Libraries:** Pandas (Data manipulation), Gradio (Web UI), Torch-DirectML (GPU support)
-* **Data Format:** CSV-based token classification schema
+## ⚙️ Tech Stack
+* **Language:** Python 3.11.9
+* **Deep Learning:** PyTorch, Hugging Face Transformers
+* **Visualization:** Streamlit
+* **Data Processing:** Pandas, Regex
+* **Protocol:** Twitch IRC API
 
-## Getting Started
+## 👥 Development Team
+* **BAHRI Ilyass**
+* **EL HICHAMI Oussama**
+
+*Supervised by: **Dr. BAKKOURI Ibtissam**, Faculty of Sciences and Techniques of Khouribga (FPK).*
+
+---
+
+## 🛠 Installation Guide
 
 ### Prerequisites
-Ensure you have Python 3.11 installed. Clone this repository and set up your virtual environment:
+* **Python Version:** 3.11.9
 
+### Setup Instructions
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/ilyassbaa/Twitch-Chat-AI-Monitor.git](https://github.com/ilyassbaa/Twitch-Chat-AI-Monitor.git)
+   cd Twitch-Chat-AI-Monitor
+
+```
+
+2. **Create a virtual environment:**
 ```bash
-# Clone the repository
-git clone https://github.com/ilyassbaa/Language-Switching-Detection.git
-cd Language-Switching-Detection
+python -m venv env
+# On Windows:
+env\Scripts\activate
+# On macOS/Linux:
+source env/bin/activate
 
-# Create and activate virtual environment (Windows)
-python -m venv .venv
-.venv\Scripts\activate
+```
 
-# Install dependencies
+
+3. **Install dependencies:**
+```bash
 pip install -r requirements.txt
 
 ```
 
-### Running the Application
 
-Once dependencies are installed, launch the web interface with:
-
+4. **Run the application:**
 ```bash
-python app.py
+streamlit run app.py
 
 ```
 
-Open the local URL provided in the terminal (usually `http://127.0.0.1:7860`) in your browser to start the detection demo.
 
-### Example Input
 
-Try testing the model with this trilingual sentence:
+---
 
-> *slm monsieur 3afak you can add chwiya diyal les mots*
+## 📊 Dashboard Overview
 
-The system will output a color-coded analysis showing the Darija, French, and English segments.
-![Code-Switching Detection Interface](assets/interface.png)
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+
+## 🏷 Keywords
+
+#Twitch #AI #MachineLearning #NLP #SentimentAnalysis #ToxicityDetection #StreamerTools #SoftwareEngineering #Python #PyTorch #HuggingFace #DistilBERT #Streamlit #DataScience #TechInternship #FPK #RealTimeSystems #ChatModeration #Innovation
+
