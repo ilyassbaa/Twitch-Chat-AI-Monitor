@@ -2,7 +2,7 @@
 # Twitch Chat AI Monitor
 
 A real-time sentiment and toxicity analysis engine for Twitch, developed as a final-year engineering project at the **Faculté Polydisciplinaire de Khouribga (FPK)**.
-
+git add README.md
 ---
 
 ## 🚀 Project Overview
@@ -37,9 +37,9 @@ The system architecture focuses on speed and accuracy:
 
 ### Setup Instructions
 1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/ilyassbaa/Twitch-Chat-AI-Monitor.git](https://github.com/ilyassbaa/Twitch-Chat-AI-Monitor.git)
-   cd Twitch-Chat-AI-Monitor
+```bash
+git clone [https://github.com/ilyassbaa/Twitch-Chat-AI-Monitor.git](https://github.com/ilyassbaa/Twitch-Chat-AI-Monitor.git)
+cd Twitch-Chat-AI-Monitor
 
 ```
 
